@@ -54,6 +54,8 @@ cask "google-backup-and-sync"
 cask "google-chrome"
 # Keyboard customizer
 cask "karabiner-elements"
+# Blocks all Keyboard and TouchBar input
+cask "keyboardcleantool"
 mas "Bitwarden", id: 1352778147
 mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
