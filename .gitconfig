@@ -1,0 +1,8 @@
+[user]
+	name = dadchyyy
+	email = dadchyyy@gmail.com
+[init]
+	defaultBranch = main
+[core]
+	editor = vim
+	pager = less
