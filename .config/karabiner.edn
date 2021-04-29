@@ -56,7 +56,13 @@
        :unfocus_omnibox [{:key :japanese_eisuu}
                          {:key :l :modi :left_command}
                          {:key :u}
-                         {:key :return_or_enter}]}
+                         {:key :return_or_enter}]
+       :bookmark_search [{:key :japanese_eisuu}
+                         {:key :t :modi :left_command}
+                         {:key :b}
+                         {:key :m}
+                         {:key :spacebar}]
+       }
 
  ;;;; helper function to generate things little bit quicker
  ;; quick define "layers" or "state" feature(use set_variable)
@@ -153,6 +159,7 @@
            [:!Cl [:japanese_eisuu :!Cl]]
            [:!Ce :edit_omnibox]
            [:!Tl :unfocus_omnibox]
+           [:!Tj :bookmark_search]
            ]}
   {:des "launch apps"
    :rules [[[:j :a] [:japanese_eisuu [:open "/Applications/Alacritty.app"]]]
