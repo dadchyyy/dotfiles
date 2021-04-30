@@ -26,6 +26,8 @@ brew "gh"
 brew "gibo"
 # Distributed revision control system
 brew "git"
+# Syntax-highlighting pager for git and diff output
+brew "git-delta"
 # Pager program similar to more
 brew "less"
 # Mac App Store command-line interface
