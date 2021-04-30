@@ -147,5 +147,6 @@ if s:is_plugged('vim-auto-save')
 	augroup vimrc_plugins_auto_save
 		autocmd!
 		autocmd FileType gitcommit b:auto_save = 0
+		autocmd FileType diff b:auto_save = 0
 	augroup END
 endif
