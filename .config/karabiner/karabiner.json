@@ -724,9 +724,9 @@
           "type" : "basic"
         }, {
           "from" : {
-            "key_code" : "j",
+            "key_code" : "b",
             "modifiers" : {
-              "mandatory" : [ "left_control" ]
+              "mandatory" : [ "left_command", "left_shift" ]
             }
           },
           "to" : [ {

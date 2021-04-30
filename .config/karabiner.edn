@@ -159,7 +159,7 @@
            [:!Cl [:japanese_eisuu :!Cl]]
            [:!Ce :edit_omnibox]
            [:!Tl :unfocus_omnibox]
-           [:!Tj :bookmark_search]
+           [:!CSb :bookmark_search]
            ]}
   {:des "launch apps"
    :rules [[[:j :a] [:japanese_eisuu [:open "/Applications/Alacritty.app"]]]
