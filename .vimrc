@@ -27,6 +27,8 @@ augroup vimrc_indentation
 augroup END
 
 " Appearance.
+let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
 set termguicolors
 
 " Define my highlights for all colorschemes.
@@ -100,14 +102,14 @@ endif
 
 " If material.vim is installed.
 if s:is_plugged('material.vim')
-	let g:material_terminal_italics = 1
+	" let g:material_terminal_italics = 1
 	let g:material_theme_style = 'palenight'
 
 	" Define my highlights for the material colorscheme.
 	function! s:material_highlights() abort
 		if g:material_theme_style == 'palenight'
 			highlight SpecialKey ctermfg=60 guifg=#3a3f58
-			highlight LineNr term=bold cterm=italic ctermfg=60 gui=italic guifg=#676e95
+			highlight LineNr term=bold ctermfg=60 guifg=#676e95
 			highlight! link MatchParen Search
 		endif
 	endfunction
