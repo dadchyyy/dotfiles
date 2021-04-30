@@ -16,6 +16,8 @@ brew "curl"
 brew "exa"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
+# Command-line fuzzy finder written in Go
+brew "fzf"
 # GitHub command-line tool
 brew "gh"
 # Access GitHub's .gitignore boilerplates

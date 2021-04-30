@@ -108,3 +108,5 @@ bindkey -M emacs '^N' history-substring-search-down
 
 # asdf-vm.
 . /usr/local/opt/asdf/asdf.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
