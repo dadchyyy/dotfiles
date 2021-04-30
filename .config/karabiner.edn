@@ -129,6 +129,8 @@
            [:!Tn :down_arrow]
            [:!Tp :up_arrow]
            [:!Tf :right_arrow]
+           [:!Ob :!Oleft_arrow]
+           [:!Of :!Oright_arrow]
            [:!Tw :delete_one_word]
            [:!Tu :delete_all_left]
            ]}
