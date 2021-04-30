@@ -22,6 +22,8 @@ brew "gh"
 brew "gibo"
 # Distributed revision control system
 brew "git"
+# Pager program similar to more
+brew "less"
 # Mac App Store command-line interface
 brew "mas"
 # Version control system designed to be a better CVS
