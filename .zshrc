@@ -60,6 +60,7 @@ alias vimrc="vim $DF/.vimrc"
 alias macosrc="vim $DF/macos.sh"
 alias alacrittyrc="vim $DF/.config/alacritty/alacritty.yml"
 alias gokurc="vim $DF/.config/karabiner.edn"
+alias gitrc="vim $DF/.gitconfig"
 
 # Run scripts.
 alias macosrun="sh $DF/macos.sh"
