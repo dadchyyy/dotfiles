@@ -14,14 +14,17 @@ export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
 
 # $ENV.
-export BOX="$HOME/GoogleDrive"
-export DF="$BOX/dotfiles"
 export EDITOR="vim"
 export PAGER="less"
-export MANPAGER="col -b -x|vim -R -c 'set ft=man nolist nomod' -"
+export MANPAGER="col -b -x|vim -R -c 'setlocal filetype=man' -"
+export BOX="$HOME/GoogleDrive"
+export DF="$BOX/dotfiles"
+export WS="$BOX/workspace"
 
 # PROMPT.
-PROMPT='%~ %# '
+export PROMPT='
+%F{yellow}%1/%f %F{green}●%f%F{yellow}●%f%F{red}●%f (%U%/%u)
+→ '
 
 # Emacs-like key bindings.
 bindkey -e
@@ -53,6 +56,7 @@ alias .4="cd ../../../.."
 alias .5="cd ../../../../.."
 alias box="cd $BOX"
 alias df="cd $DF"
+alias ws="cd $WS"
 
 chpwd_function() {
 	l

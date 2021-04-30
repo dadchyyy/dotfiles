@@ -20,6 +20,8 @@ brew "exa"
 brew "findutils"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU awk utility
+brew "gawk"
 # GitHub command-line tool
 brew "gh"
 # Access GitHub's .gitignore boilerplates
@@ -28,6 +30,8 @@ brew "gibo"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
 # Pager program similar to more
 brew "less"
 # Mac App Store command-line interface
@@ -66,6 +70,8 @@ cask "google-chrome"
 cask "karabiner-elements"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
+# WordPress local development tool by Flywheel
+cask "local"
 mas "Bitwarden", id: 1352778147
 mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
