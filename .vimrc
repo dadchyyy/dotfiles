@@ -8,6 +8,7 @@ set number
 set scrolloff=10
 set hlsearch
 set incsearch
+set backspace=eol,indent,start
 
 " Indentation.
 set autoindent
