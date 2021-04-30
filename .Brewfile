@@ -34,6 +34,8 @@ brew "less"
 brew "mas"
 # Version control system designed to be a better CVS
 brew "subversion"
+# Terminal multiplexer
+brew "tmux"
 # Vi 'workalike' with many additional features
 brew "vim"
 # UNIX shell (command interpreter)
