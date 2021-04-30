@@ -61,15 +61,15 @@ chpwd_function() {
 add-zsh-hook chpwd chpwd_function
 
 # Edit config files.
-alias zshrc="vim $DF/.zshrc"
-alias vimrc="vim $DF/.vimrc"
-alias macosrc="vim $DF/macos.sh"
-alias alacrittyrc="vim $DF/.config/alacritty/alacritty.yml"
-alias gokurc="vim $DF/.config/karabiner.edn"
-alias gitrc="vim $DF/.gitconfig"
-alias batrc="vim $DF/.config/bat/config"
-alias tmuxrc="vim $DF/.tmux.conf"
-alias deltarc="vim $DF/.gitconfig"
+alias zshrc="$EDITOR $DF/.zshrc"
+alias vimrc="$EDITOR $DF/.vimrc"
+alias macosrc="$EDITOR $DF/macos.sh"
+alias alacrittyrc="$EDITOR $DF/.config/alacritty/alacritty.yml"
+alias gokurc="$EDITOR $DF/.config/karabiner.edn"
+alias gitrc="$EDITOR $DF/.gitconfig"
+alias batrc="$EDITOR $DF/.config/bat/config"
+alias tmuxrc="$EDITOR $DF/.tmux.conf"
+alias deltarc="$EDITOR $DF/.gitconfig"
 
 # Run scripts.
 alias macosrun="sh $DF/macos.sh"
