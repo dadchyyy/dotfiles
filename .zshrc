@@ -82,6 +82,7 @@ alias bs="mybrew search"
 alias bi="mybrew install"
 alias bu="mybrew uninstall"
 alias bl="mybrew list"
+alias bd="mybrew bundle dump --file=~/.Brewfile --force --describe"
 
 # Git.
 alias g="git"
