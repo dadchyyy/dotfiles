@@ -3,3 +3,4 @@
 .config/karabiner/automatic_backups
 .config/gh/hosts.yml
 .config/gh/state.yml
+.tmux/themes
