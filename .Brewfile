@@ -10,6 +10,8 @@ tap "yqrashawn/goku"
 brew "coreutils"
 # Extendable version manager with support for Ruby, Node.js, Erlang & more
 brew "asdf"
+# Clone of cat(1) with syntax highlighting and Git integration
+brew "bat"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Modern replacement for 'ls'
