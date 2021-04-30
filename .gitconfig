@@ -5,4 +5,7 @@
 	defaultBranch = main
 [core]
 	editor = vim
-	pager = less
+	pager = delta
+[delta]
+	syntax-theme = palenight
+	navigate = true
