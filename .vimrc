@@ -1,3 +1,5 @@
+runtime ftplugin/man.vim
+
 let g:mapleader = ' '
 
 set ttimeoutlen=0

@@ -16,9 +16,15 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 # $ENV.
 export BOX="$HOME/GoogleDrive"
 export DF="$BOX/dotfiles"
+export EDITOR="vim"
+export PAGER="less"
+export MANPAGER="col -b -x|vim -R -c 'set ft=man nolist nomod' -"
 
 # PROMPT.
 PROMPT='%~ %# '
+
+# Emacs-like key bindings.
+bindkey -e
 
 # Relaunch current shell.
 alias reload="exec $SHELL -l"
