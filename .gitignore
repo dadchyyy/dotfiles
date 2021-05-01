@@ -1,6 +1,8 @@
-.vim/autoload
-.vim/plugged
-.config/karabiner/automatic_backups
 .config/gh/hosts.yml
 .config/gh/state.yml
+.config/karabiner/automatic_backups
 .tmux/themes
+.vim/autoload
+.vim/plugged
+.vim/undodir
+.vim/ultisnips/sample*

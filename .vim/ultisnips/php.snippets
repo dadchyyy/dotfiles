@@ -1,0 +1,22 @@
+priority 50
+extends html
+
+global !p
+from snippet_helpers import *
+endglobal
+
+snippet php "php tag" i
+<?php $0 ?>
+endsnippet
+
+pre_expand "delete_all_right(snip, -1)"
+snippet "<?php " "expand php tag" r
+
+$0
+?>
+endsnippet
+
+context "re.search('^ *<\?php', snip.buffer[snip.line - 1]) and re.search('^ *\?>', snip.buffer[snip.line + 1])"
+pre_expand "clear_line(snip, 1)"
+snippet "^" "unclosed php tag" rb
+endsnippet

@@ -16,7 +16,6 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 # $ENV.
 export EDITOR="vim"
 export PAGER="less"
-export MANPAGER="col -b -x|vim -R -c 'setlocal filetype=man' -"
 export BOX="$HOME/GoogleDrive"
 export DF="$BOX/dotfiles"
 export WS="$BOX/workspace"
@@ -46,7 +45,7 @@ alias rm="gomi"
 # Replace ls to exa.
 alias ls="exa --group-directories-first"
 alias l="exa -laaF --group-directories-first"
-alias lt="exa -TaF --group-directories-first"
+alias lt='exa -TaF --group-directories-first --ignore-glob=".git|node_modules|plugged"'
 
 # Navigation.
 alias ..="cd .."
@@ -74,6 +73,7 @@ alias gitrc="$EDITOR $DF/.gitconfig"
 alias batrc="$EDITOR $DF/.config/bat/config"
 alias tmuxrc="$EDITOR $DF/.tmux.conf"
 alias deltarc="$EDITOR $DF/.gitconfig"
+alias fdignore="$EDITOR $DF/.fdignore"
 
 # Run scripts.
 alias macosrun="sh $DF/macos.sh"
@@ -120,7 +120,14 @@ alias gl1="git log --oneline"
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
+# python.
+export PYTHONDONTWRITEBYTECODE=1
+
+# fzf.
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='fd --type f --hidden'
+export FZF_CTRL_T_COMMAND='fd --type f --hidden . ~'
+export FZF_ALT_C_COMMAND='fd --type d --hidden . ~'
+
 # asdf-vm.
 . /usr/local/opt/asdf/asdf.sh
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

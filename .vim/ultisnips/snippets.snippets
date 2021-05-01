@@ -1,0 +1,29 @@
+priority 0
+
+snippet snip "Ultisnips snippet definition" b
+`!p snip.rv = "snippet"` ${1:Trigger} "${2:Description}" ${3:b}
+$0
+`!p snip.rv = "endsnippet"`
+endsnippet
+
+snippet global "Global python" b
+`!p snip.rv = "global"` !p
+from snippet_helpers import *
+$0
+`!p snip.rv = "endglobal"`
+endsnippet
+
+snippet rv "snip.rv" w
+snip.rv = $0
+endsnippet
+
+snippet mg "match.group" w
+match.group(${1:1})$0
+endsnippet
+
+priority -1
+
+snippet p "Inline python" i
+\`!p $1 \`$0
+endsnippet
+

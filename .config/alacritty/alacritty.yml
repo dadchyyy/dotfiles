@@ -117,7 +117,7 @@ font:
     style: Book
   size: 14.0
   offset:
-    x: 1
+    x: 0
     y: 0
   glyph_offset:
     x: 0

@@ -16,6 +16,8 @@ brew "bat"
 brew "curl"
 # Modern replacement for 'ls'
 brew "exa"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
 # Command-line fuzzy finder written in Go
@@ -36,8 +38,12 @@ brew "gnupg"
 brew "less"
 # Mac App Store command-line interface
 brew "mas"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # Version control system designed to be a better CVS
 brew "subversion"
+# Code-search similar to ack
+brew "the_silver_searcher"
 # Terminal multiplexer
 brew "tmux"
 # Vi 'workalike' with many additional features
@@ -72,6 +78,7 @@ cask "karabiner-elements"
 cask "keyboardcleantool"
 # WordPress local development tool by Flywheel
 cask "local"
+cask "townwifi"
 mas "Bitwarden", id: 1352778147
 mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
