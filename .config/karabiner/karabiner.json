@@ -845,6 +845,26 @@
             "shell_command" : "open \"/Applications/DeepL.app\""
           } ],
           "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "j"
+            }, {
+              "key_code" : "f"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "japanese_eisuu"
+          }, {
+            "shell_command" : "open \"/System/Library/CoreServices/Finder.app\""
+          } ],
+          "type" : "basic"
         } ]
       } ]
     },

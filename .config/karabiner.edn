@@ -8,6 +8,7 @@
  :applications {:terminals ["^io\\.alacritty$"
                             "^com\\.apple\\.Terminal$"]
                 :browsers ["^com\\.google\\.Chrome$"]
+                :finder ["^com\\.apple\\.finder$"]
                 }
 
  ;; define input_source identifiers
@@ -168,6 +169,7 @@
    :rules [[[:j :a] [:japanese_eisuu [:open "/Applications/Alacritty.app"]]]
            [[:j :c] [:japanese_eisuu [:open "/Applications/Google Chrome.app"]]]
            [[:j :d] [:japanese_eisuu [:open "/Applications/DeepL.app"]]]
+           [[:j :f] [:japanese_eisuu [:open "/System/Library/CoreServices/Finder.app"]]]
            ]}
   ;; {:des "command a to control 1" :rules [:!Ca :!T1]} ;; command a to control 1
   ;; {:des "my spacebar to control 1" :rules [:my-spacebar :!T1]} ;; my-spacebar to control 1

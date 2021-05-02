@@ -10,4 +10,4 @@ nnoremap <c-j> :<c-u>ProjectFiles<cr>
 nnoremap <c-k> :<c-u>Buffers<cr>
 
 nnoremap <leader>fd :<c-u>DotFiles<cr>
-nnoremap <leader>fh :<c-u>History<cr>
+nnoremap <leader>fH :<c-u>History<cr>

@@ -32,10 +32,6 @@ if has('signs')
 	set signcolumn=number
 endif
 
-if has('clipboard')
-	set clipboard=unnamed
-endif
-
 let g:did_install_default_menus = 1
 let g:did_install_syntax_menu   = 1
 let g:loaded_2html_plugin       = 1
@@ -72,6 +68,23 @@ nnoremap <leader>mh :<c-u>vs %:p:h<cr>
 nnoremap <leader>mj :<c-u>bel sp %:p:h<cr>
 nnoremap <leader>mk :<c-u>sp %:p:h<cr>
 nnoremap <leader>ml :<c-u>bel vs %:p:h<cr>
+nnoremap cl' 2f"ci'
+nnoremap cl" 2f"ci"
+nnoremap ch' 2F"ci'
+nnoremap ch" 2F"ci"
+nnoremap <c-l> :<c-u>noh<cr>
+nnoremap cg* *Ncgn
+
+augroup vimrc_auto_mkdir
+	autocmd!
+	autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+	function! s:auto_mkdir(dir, force)
+		if !isdirectory(a:dir) && (a:force ||
+					\    input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+			call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+		endif
+	endfunction
+augroup END
 
 if $HOME != $USERPROFILE && $GIT_EXEC_PATH != ''
 	finish
@@ -94,6 +107,9 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'SirVer/ultisnips'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
+Plug 'kana/vim-operator-user'
+Plug 'rhysd/vim-operator-surround'
+Plug 'AndrewRadev/tagalong.vim'
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))

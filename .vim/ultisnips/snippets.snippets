@@ -21,9 +21,12 @@ snippet mg "match.group" w
 match.group(${1:1})$0
 endsnippet
 
+snippet "(\d)?vis" "${VISUAL}" rw
+`!p snip.rv = "${" + match.group(1) + ":${VISUAL}}" if match.group(1) else "${VISUAL}"`
+endsnippet
+
 priority -1
 
 snippet p "Inline python" i
-\`!p $1 \`$0
+\`!p $1\`$0
 endsnippet
-
