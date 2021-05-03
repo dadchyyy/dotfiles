@@ -20,7 +20,7 @@ endif
 
 if has('persistent_undo')
 	set undofile
-	setglobal undodir=~/.vim/undodir
+	setglobal undodir=/tmp
 endif
 
 if has('extra_search')
@@ -63,7 +63,7 @@ cnoremap <c-n> <down>
 cnoremap <c-p> <up>
 cnoremap <c-f> <right>
 cnoremap <c-a> <home>
-nnoremap <leader>mm :<c-u>e %:p:h<cr>
+nnoremap <leader>- :<c-u>e %:p:h<cr>
 nnoremap <leader>mh :<c-u>vs %:p:h<cr>
 nnoremap <leader>mj :<c-u>bel sp %:p:h<cr>
 nnoremap <leader>mk :<c-u>sp %:p:h<cr>
@@ -80,11 +80,16 @@ augroup vimrc_auto_mkdir
 	autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
 	function! s:auto_mkdir(dir, force)
 		if !isdirectory(a:dir) && (a:force ||
-					\    input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+					\ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
 			call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
 		endif
 	endfunction
 augroup END
+
+function! FindGitRoot() abort
+	let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
+	return v:shell_error ? '' : root
+endfunction
 
 if $HOME != $USERPROFILE && $GIT_EXEC_PATH != ''
 	finish
@@ -96,7 +101,6 @@ Plug 'kaicataldo/material.vim', { 'branch': 'main' }
 Plug 'mattn/vim-molder'
 Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf.vim' | Plug '/usr/local/opt/fzf'
-Plug 'airblade/vim-rooter'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -107,9 +111,7 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
 Plug 'SirVer/ultisnips'
 Plug 'captbaritone/better-indent-support-for-php-with-html'
-Plug 'kana/vim-operator-user'
-Plug 'rhysd/vim-operator-surround'
-Plug 'AndrewRadev/tagalong.vim'
+Plug 'tpope/vim-surround' | Plug 'tpope/vim-repeat'
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))

@@ -107,8 +107,6 @@ alias gd="git diff"
 alias gl="git log"
 alias gl1="git log --oneline"
 
-# GitHub-cli.
-
 # zsh-syntax-highlighting.
 . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
@@ -125,9 +123,9 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # fzf.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export FZF_DEFAULT_COMMAND='fd --type f --hidden'
-export FZF_CTRL_T_COMMAND='fd --type f --hidden . ~'
-export FZF_ALT_C_COMMAND='fd --type d --hidden . ~'
+# export FZF_DEFAULT_COMMAND='fd --type f'
+# export FZF_CTRL_T_COMMAND='fd --type f --hidden . ~'
+export FZF_CD_COMMAND='fd --type d --hidden . ~'
 
 # asdf-vm.
 . /usr/local/opt/asdf/asdf.sh

@@ -9,8 +9,8 @@ def is_visual_mode(snip):
     return snip.visual_mode == 'v'
 
 
-def is_visual_linde_mode(snip):
-    return snip.visual_line_mode == 'V'
+def is_visual_line_mode(snip):
+    return snip.visual_mode == 'V'
 
 
 def delete_all_right(snip, relative_column=0):

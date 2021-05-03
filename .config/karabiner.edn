@@ -49,8 +49,7 @@
                   {:key :tab :modi [:left_command] :lazy true}]
        :launcher_trigger {:key :spacebar :modi [:left_option]}
        :delete_one_word {:key :delete_or_backspace :modi [:left_option]}
-       :delete_all_left [{:key :delete_or_backspace}
-                         {:key :delete_or_backspace :modi [:left_command]}]
+       :delete_all_left {:key :delete_or_backspace :modi [:left_command]}
        :edit_omnibox [{:key :japanese_eisuu}
                       {:key :l :modi :left_command}
                       {:key :right_arrow}
