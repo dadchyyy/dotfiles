@@ -5,6 +5,10 @@ global !p
 from snippet_helpers import *
 endglobal
 
+snippet img "img tag" b
+<img class="$1" src="${2:$img}" alt="$3"${4: loading="lazy"}${0: <?php echo getimagesize($img)[3]; ?>}>
+endsnippet
+
 snippet php "php tag" i
 <?php $0 ?>
 endsnippet

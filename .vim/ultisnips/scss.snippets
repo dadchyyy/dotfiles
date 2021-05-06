@@ -1,0 +1,14 @@
+extends css
+priority 50
+
+snippet "([a-z\-$&]+);" "fix notation error" rbA
+`!p snip.rv = match.group(1)`:
+endsnippet
+
+snippet "([+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)p" "easy % insertion" riA
+`!p snip.rv = match.group(1)`%
+endsnippet
+
+snippet %x "px fallback" iA
+px
+endsnippet

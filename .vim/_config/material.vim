@@ -7,3 +7,4 @@ silent! colorscheme material
 highlight Normal ctermbg=NONE guibg=NONE
 highlight! link MatchParen Search
 highlight! link SpecialKey LineNr
+highlight link cssBraceError None

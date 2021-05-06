@@ -78,3 +78,7 @@ def get_comment_format():
         if c[0] == "SINGLE_CHAR":
             return c[1:]
     return comments[0][1:]
+
+
+def is_simple_comment_format():
+    return get_comment_format()[0] == get_comment_format()[2]

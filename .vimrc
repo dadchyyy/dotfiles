@@ -1,35 +1,19 @@
-set number
-setglobal laststatus=2
-setglobal cmdheight=2
-set list
-setglobal listchars=tab:»-,eol:¬
-setglobal ttimeoutlen=0
-setglobal backspace=indent,eol,start
-set nowrap
-setglobal ignorecase
-setglobal smartcase
-setglobal pumheight=5
+set autoindent
+set expandtab
+set tabstop=2
 set softtabstop=-1
 set shiftwidth=0
+set nowrap
+set ttimeoutlen=0
+set backspace=indent,eol,start
+set backupcopy=yes
+set wildcharm=<tab>
+set laststatus=2
 
 if has('termguicolors')
-	let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
-	let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
-	setglobal termguicolors
-endif
-
-if has('persistent_undo')
-	set undofile
-	setglobal undodir=/tmp
-endif
-
-if has('extra_search')
-	setglobal hlsearch
-	setglobal incsearch
-endif
-
-if has('signs')
-	set signcolumn=number
+  let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
+  let &t_8b = "\<Esc>[48:2:%lu:%lu:%lum"
+  set termguicolors
 endif
 
 let g:did_install_default_menus = 1
@@ -53,65 +37,50 @@ let g:skip_loading_mswin        = 1
 
 let g:mapleader = ' '
 
-nnoremap <leader>v :<c-u>vs $MYVIMRC<cr>
-nnoremap <leader>V :<c-u>so $MYVIMRC<cr>
+nnoremap <leader>v :vs $MYVIMRC<cr>
+nnoremap <leader>V :so $MYVIMRC<cr>
 nnoremap q :q!<cr>
-nnoremap <leader>q q
-nnoremap @ @q
 cnoremap <c-b> <left>
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>
-cnoremap <c-f> <right>
+cnoremap <c-f> <down>
 cnoremap <c-a> <home>
-nnoremap <leader>- :<c-u>e %:p:h<cr>
-nnoremap <leader>mh :<c-u>vs %:p:h<cr>
-nnoremap <leader>mj :<c-u>bel sp %:p:h<cr>
-nnoremap <leader>mk :<c-u>sp %:p:h<cr>
-nnoremap <leader>ml :<c-u>bel vs %:p:h<cr>
-nnoremap cl' 2f"ci'
-nnoremap cl" 2f"ci"
-nnoremap ch' 2F"ci'
+nnoremap ch' 2F'ci'
 nnoremap ch" 2F"ci"
-nnoremap <c-l> :<c-u>noh<cr>
-nnoremap cg* *Ncgn
+nnoremap cl' 2f'ci'
+nnoremap cl" 2f"ci"
+nnoremap <leader>- :e %:h<cr>
+nnoremap <c-l> :noh<cr>
 
 augroup vimrc_auto_mkdir
-	autocmd!
-	autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
-	function! s:auto_mkdir(dir, force)
-		if !isdirectory(a:dir) && (a:force ||
-					\ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
-			call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
-		endif
-	endfunction
+  autocmd!
+  autocmd BufWritePre * call s:auto_mkdir(expand('<afile>:p:h'), v:cmdbang)
+  function! s:auto_mkdir(dir, force)
+    if !isdirectory(a:dir) && (a:force ||
+          \ input(printf('"%s" does not exist. Create? [y/N]', a:dir)) =~? '^y\%[es]$')
+      call mkdir(iconv(a:dir, &encoding, &termencoding), 'p')
+    endif
+  endfunction
 augroup END
-
-function! FindGitRoot() abort
-	let root = split(system('git rev-parse --show-toplevel'), '\n')[0]
-	return v:shell_error ? '' : root
-endfunction
-
-if $HOME != $USERPROFILE && $GIT_EXEC_PATH != ''
-	finish
-end
 
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/vim-plug'
-Plug 'kaicataldo/material.vim', { 'branch': 'main' }
-Plug 'mattn/vim-molder'
+let g:polyglot_disabled = ['autoindent', 'sensible'] | Plug 'sheerun/vim-polyglot'
+Plug 'kaicataldo/material.vim'
 Plug '907th/vim-auto-save'
 Plug 'junegunn/fzf.vim' | Plug '/usr/local/opt/fzf'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'mattn/vim-lsp-settings'
-Plug 'prabirshrestha/asyncomplete.vim'
-Plug 'prabirshrestha/asyncomplete-lsp.vim'
-Plug 'vim-jp/vimdoc-ja'
-Plug 'tomtom/tcomment_vim'
+Plug 'airblade/vim-rooter'
+Plug 'SirVer/ultisnips'
+Plug 'tpope/vim-surround' | Plug 'tpope/vim-repeat'
+Plug 'captbaritone/better-indent-support-for-php-with-html'
 Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-Plug 'SirVer/ultisnips'
-Plug 'captbaritone/better-indent-support-for-php-with-html'
-Plug 'tpope/vim-surround' | Plug 'tpope/vim-repeat'
+Plug 'tomtom/tcomment_vim'
+Plug 'aeke/vim-php-cs-fixer'
+Plug 'mattn/vim-molder'
+Plug 'mattn/vim-molder-operations'
+Plug 'akiyan/vim-textobj-php'
+Plug 'vim-jp/vimdoc-ja'
 call plug#end()
 
 let s:plugs = get(s:, 'plugs', get(g:, 'plugs', {}))

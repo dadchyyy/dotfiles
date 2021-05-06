@@ -1,0 +1,19 @@
+priority 0
+
+global
+from snippet_helpers import *
+endglobal
+
+snippet " ?{" "expand the block" riA
+ {
+	$0
+}
+endsnippet
+
+snippet , "debug code" bA
+/* debug */ border: 1px solid rgba(255 0 0/.4); background-color: rgba(255 0 0/.2);
+endsnippet
+
+snippet "([a-z\-]+);" "fix notation error" rbA
+`!p snip.rv = match.group(1)`:
+endsnippet

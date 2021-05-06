@@ -4,6 +4,7 @@ if type brew &>/dev/null; then
 
   autoload -Uz compinit
   autoload -Uz add-zsh-hook
+  autoload -Uz history-search-end
   compinit
 fi
 
@@ -24,6 +25,21 @@ export WS="$BOX/workspace"
 export PROMPT='
 %F{yellow}%1/%f %F{green}●%f%F{yellow}●%f%F{red}●%f (%U%/%u)
 → '
+
+# Zsh completion settings.
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:]}={[:upper:]}' '+m:{[:upper:]}={[:lower:]}'
+
+# Zsh histroy settings.
+setopt hist_ignore_dups
+setopt hist_ignore_all_dups
+setopt hist_ignore_space
+setopt hist_reduce_blanks
+setopt hist_save_no_dups
+setopt hist_no_store
+# zle -N history-beginning-search-backward-end history-search-end
+# zle -N history-beginning-search-forward-end history-search-end
+# bindkey "^p" history-beginning-search-backward-end
+# bindkey "^b" history-beginning-search-forward-end
 
 # Emacs-like key bindings.
 bindkey -e
@@ -74,6 +90,7 @@ alias batrc="$EDITOR $DF/.config/bat/config"
 alias tmuxrc="$EDITOR $DF/.tmux.conf"
 alias deltarc="$EDITOR $DF/.gitconfig"
 alias fdignore="$EDITOR $DF/.fdignore"
+alias tigrc="$EDITOR $DF/.tigrc"
 
 # Run scripts.
 alias macosrun="sh $DF/macos.sh"
