@@ -61,7 +61,7 @@ alias rm="gomi"
 # Replace ls to exa.
 alias ls="exa --group-directories-first"
 alias l="exa -laaF --group-directories-first"
-alias lt='exa -TaF --group-directories-first --ignore-glob=".git|node_modules|plugged"'
+alias lt='exa -TaF --group-directories-first --ignore-glob=".git|node_modules|plugged|vendor"'
 
 # Navigation.
 alias ..="cd .."

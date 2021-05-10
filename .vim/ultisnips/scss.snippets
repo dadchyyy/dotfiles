@@ -1,14 +1,34 @@
 extends css
 priority 50
 
-snippet "([a-z\-$&]+);" "fix notation error" rbA
-`!p snip.rv = match.group(1)`:
+global !p
+from snippet_helpers import *
+module_dir = 'abstracts'
+endglobal
+
+# ======================================================================
+# - DART SASS
+# ======================================================================
+
+snippet use "Use modules" b
+@use ${0:'../`!p snip.rv = module_dir`/$1'};
 endsnippet
 
-snippet "([+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)p" "easy % insertion" riA
-`!p snip.rv = match.group(1)`%
+# ======================================================================
+# - PSEUDO
+# ======================================================================
+
+snippet fh "focus, hover" b
+&:focus,
+&:hover
 endsnippet
 
-snippet %x "px fallback" iA
-px
+snippet focus "focus" b
+&:focus
 endsnippet
+
+snippet hover "hover" b
+&:hover
+endsnippet
+
+

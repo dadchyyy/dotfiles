@@ -4,43 +4,551 @@ global !p
 from snippet_helpers import *
 endglobal
 
-snippet "h([1-6])" "h1-6 tag" rb
-<`!p snip.rv = match.group(1)` class="$1">${0:${VISUAL}}</`!p snip.rv = match.group(1)`>
+# ======================================================================
+# - COMMENT GENERATORS
+# ======================================================================
+
+snippet ; "Comment" bA
+<!-- $0 -->
 endsnippet
 
-snippet p "p tag" b
-<p class="$1">${0:${VISUAL}}</p>
+snippet >; "End comment" iA
+><!-- $0 -->
 endsnippet
 
-snippet a "a tag" b
-<a class="$1" href="$2"${3: target="_blank" rel="noreferrer noopener"}>
-	${0:${VISUAL}}
-</a>
-endsnippet
-
-snippet span "span tag" i
-<span class="$1">${0:${VISUAL}}</span>
-endsnippet
-
-snippet br "br tag" i
-<br>
-endsnippet
-
-snippet img "img tag" b
-<img class="$1" src="$2" alt="$3"${4: loading="lazy"} width="$5" height="$0">
-endsnippet
-
-priority -1
-snippet "([a-z1-6]+)" "common html tag" rb
-<`!p snip.rv = match.group(1)` class="$1">
-	${0:${VISUAL}}
-</`!p snip.rv = match.group(1)`>
-endsnippet
-priority 0
+# ======================================================================
+# - UTILITIES
+# ======================================================================
 
 pre_expand "delete_all_right(snip)"
-snippet "<([a-z1-6]+).*>" "expand html tag" rb
+snippet "<([a-z1-6]+).*>" "Expand the tag" rb
 
 	$0
 </`!p snip.rv = match.group(1) `>
 endsnippet
+
+# ======================================================================
+# - HTML TAGS
+# ======================================================================
+
+snippet html "html" b
+<html${1: lang="${2:ja}"}>
+	${0:${VISUAL}}
+</html>
+endsnippet
+
+snippet head "head" b
+<head>
+	${0:${VISUAL}}
+</head>
+endsnippet
+
+snippet title "title" b
+<title>${0:${VISUAL}}</title>
+endsnippet
+
+# snippet base "<base>" b
+#
+# endsnippet
+
+snippet link "link" b
+<link rel="${1:stylesheet}" href="$0">
+endsnippet
+
+snippet meta "meta" b
+<meta$0>
+endsnippet
+
+snippet style "style" b
+<style>
+	${0:${VISUAL}}
+<style>
+endsnippet
+
+snippet body "body" b
+<body$1>
+	${0:${VISUAL}}
+</body>
+endsnippet
+
+snippet article "article" b
+<article class="$1">
+	${0:${VISUAL}}
+</article>
+endsnippet
+
+snippet section "section" b
+<section class="$1">
+	${0:${VISUAL}}
+</section>
+endsnippet
+
+snippet nav "nav" b
+<nav class="$1">
+	${0:${VISUAL}}
+</nav>
+endsnippet
+
+snippet aside "aside" b
+<aside class="$1">
+	${0:${VISUAL}}
+</aside>
+endsnippet
+
+snippet "h([1-6])" "h1-h6" rb
+<h`!p snip.rv = match.group(1)` class="$1">${0:${VISUAL}}</h`!p snip.rv = match.group(1)`>
+endsnippet
+
+snippet hgroup "hgroup" b
+<hgroup class="$1">
+	${0:${VISUAL}}
+</hgroup>
+endsnippet
+
+snippet header "header" b
+<header class="$1">
+	${0:${VISUAL}}
+</header>
+endsnippet
+
+snippet footer "footer" b
+<footer class="$1">
+	${0:${VISUAL}}
+</footer>
+endsnippet
+
+snippet address "address" b
+<address class="$1">
+	${0:${VISUAL}}
+</address>
+endsnippet
+
+snippet p "p" b
+<p class="$1">${0:${VISUAL}}</p>
+endsnippet
+
+snippet hr "hr" b
+<hr class="$0">
+endsnippet
+
+snippet pre "pre" b
+<pre class="$1">
+	${0:${VISUAL}}
+</pre>
+endsnippet
+
+snippet blockquote "blockquote" b
+<blockquote class="$1">
+	${0:${VISUAL}}
+</blockquote>
+endsnippet
+
+snippet ol "ol" b
+<ol class="$1">
+	${0:${VISUAL}}
+</ol>
+endsnippet
+
+snippet ul "ul" b
+<ul class="$1">
+	${0:${VISUAL}}
+</ul>
+endsnippet
+
+snippet menu "menu" b
+<menu class="$1">
+	${0:${VISUAL}}
+</menu>
+endsnippet
+
+snippet li "li" b
+<li class="$1">${0:${VISUAL}}</li>
+endsnippet
+
+context "is_visual_line_mode(snip)"
+snippet li "li" b
+<li class="$1">
+	${0:${VISUAL}}
+</li>
+endsnippet
+
+snippet dl "dl" b
+<dl class="$1">
+	${0:${VISUAL}}
+</dl>
+endsnippet
+
+snippet dt "dt" b
+<dt class="$1">${0:${VISUAL}}</dt>
+endsnippet
+
+context "is_visual_line_mode(snip)"
+snippet dt "dt" b
+<dt class="$1">
+	${0:${VISUAL}}
+</dt>
+endsnippet
+
+snippet dd "dd" b
+<dd class="$1">${0:${VISUAL}}</dd>
+endsnippet
+
+context "is_visual_line_mode(snip)"
+snippet dd "dd" b
+<dd class="$1">
+	${0:${VISUAL}}
+</dd>
+endsnippet
+
+snippet figure "figure" b
+<figure class="$1">
+	${0:${VISUAL}}
+</figure>
+endsnippet
+
+# snippet figcaption "figcaption" b
+#
+# endsnippet
+
+snippet main "main" b
+<main class="$1">
+	${0:${VISUAL}}
+</main>
+endsnippet
+
+snippet div "div" b
+<div class="$1">
+	${0:${VISUAL}}
+</div>
+endsnippet
+
+snippet a "a" w
+<a class="$1" href="$2">${0:${VISUAL}}</a>
+endsnippet
+
+context "is_visual_line_mode(snip)"
+snippet a "a" b
+<a class="$1" href="$2">
+	${0:${VISUAL}}
+</a>
+endsnippet
+
+snippet em "em" w
+<em class="$1">${0:${VISUAL}}</em>
+endsnippet
+
+snippet strong "strong" w
+<strong class="$1">${0:${VISUAL}}</strong>
+endsnippet
+
+snippet small "small" w
+<small class="$1">${0:${VISUAL}}</small>
+endsnippet
+
+# snippet s "s" w
+#
+# endsnippet
+
+# snippet cite "cite" w
+#
+# endsnippet
+
+# snippet q "q" w
+#
+# endsnippet
+
+# snippet dfn "dfn" w
+#
+# endsnippet
+
+# snippet abbr "abbr" w
+#
+# endsnippet
+
+# snippet ruby "ruby" w
+#
+# endsnippet
+
+# snippet rt "rt" w
+#
+# endsnippet
+
+# snippet rp "rp" w
+#
+# endsnippet
+
+# snippet data "data" w
+#
+# endsnippet
+
+snippet time "time" w
+<time class="$1" datetime="$2">${0:${VISUAL}}</time>
+endsnippet
+
+# snippet code "code" w
+#
+# endsnippet
+
+# snippet var "rp" w
+#
+# endsnippet
+
+# snippet samp "samp" w
+#
+# endsnippet
+
+# snippet kbd "kbd" w
+#
+# endsnippet
+
+# snippet sub "sub" w
+#
+# endsnippet
+
+# snippet sup "sup" w
+#
+# endsnippet
+
+# snippet i "i" w
+#
+# endsnippet
+
+# snippet b "b" w
+#
+# endsnippet
+
+# snippet u "u" w
+#
+# endsnippet
+
+# snippet mark "mark" w
+#
+# endsnippet
+
+# snippet bdi "bdi" w
+#
+# endsnippet
+
+# snippet bdo "bdo" w
+#
+# endsnippet
+
+snippet span "span" w
+<span class="$1">${0:${VISUAL}}</span>
+endsnippet
+
+snippet br "br" i
+<br>
+endsnippet
+
+# snippet wbr "wbr" w
+#
+# endsnippet
+
+# snippet ins "ins" w
+#
+# endsnippet
+
+# snippet del "del" w
+#
+# endsnippet
+
+# snippet picture "picture" b
+#
+# endsnippet
+
+# snippet source "source" b
+#
+# endsnippet
+
+snippet img "img" w
+<img class="$1" src="$2" alt="$3" width="$4" height="$5" loading="lazy">
+endsnippet
+
+# snippet iframe "iframe" b
+#
+# endsnippet
+
+# snippet embed "embed" b
+#
+# endsnippet
+
+# snippet object "object" b
+#
+# endsnippet
+
+# snippet param "param" b
+#
+# endsnippet
+
+# snippet video "video" b
+#
+# endsnippet
+
+# snippet audio "audio" b
+#
+# endsnippet
+
+# snippet track "track" b
+#
+# endsnippet
+
+# snippet map "map" b
+#
+# endsnippet
+
+# snippet area "area" b
+#
+# endsnippet
+
+snippet table "table" b
+<table class="$1">
+	${0:${VISUAL}}
+</table>
+endsnippet
+
+# snippet caption "caption" b
+#
+# endsnippet
+
+# snippet colgroup "colgroup" b
+#
+# endsnippet
+
+# snippet col "col" b
+#
+# endsnippet
+
+snippet tbody "tbody" b
+<tbody class="$1">
+	${0:${VISUAL}}
+</tbody>
+endsnippet
+
+snippet thead "thead" b
+<thead class="$1">
+	${0:${VISUAL}}
+</thead>
+endsnippet
+
+snippet tfoot "tfoot" b
+<tfoot class="$1">
+	${0:${VISUAL}}
+</tfoot>
+endsnippet
+
+snippet tr "tr" b
+<tr class="$1">
+	${0:${VISUAL}}
+</tr>
+endsnippet
+
+snippet td "td" b
+<td class="$1">${0:${VISUAL}}</td>
+endsnippet
+
+context "is_visual_line_mode(snip)"
+snippet td "td" b
+<td class="$1">
+	${0:${VISUAL}}
+</td>
+endsnippet
+
+snippet th "th" b
+<th class="$1">${0:${VISUAL}}</th>
+endsnippet
+
+context "is_visual_line_mode(snip)"
+snippet th "th" b
+<th class="$1">
+	${0:${VISUAL}}
+</th>
+endsnippet
+
+# snippet form "form" b
+#
+# endsnippet
+
+# snippet label "label" b
+#
+# endsnippet
+
+# snippet input "input" b
+#
+# endsnippet
+
+snippet button "button" b
+<button class="$1" type="${2:button}">${0:${VISUAL}}</button>
+endsnippet
+
+# snippet select "select" b
+#
+# endsnippet
+
+# snippet datalist "datalist" b
+#
+# endsnippet
+
+# snippet optgroup "optgroup" b
+#
+# endsnippet
+
+# snippet option "option" b
+#
+# endsnippet
+
+# snippet textarea "textarea" b
+#
+# endsnippet
+
+# snippet output "output" b
+#
+# endsnippet
+
+# snippet progress "progress" b
+#
+# endsnippet
+
+# snippet meter "meter" b
+#
+# endsnippet
+
+# snippet fieldset "fieldset" b
+#
+# endsnippet
+
+# snippet legend "legend" b
+#
+# endsnippet
+
+# snippet details "details" b
+#
+# endsnippet
+
+# snippet summary "summary" b
+#
+# endsnippet
+
+# snippet dialog "dialog" b
+#
+# endsnippet
+
+snippet script "script" b
+<script${1: src="$2"}${3: defer}>${0:${VISUAL}}</script>
+endsnippet
+
+# snippet noscript "noscript" b
+#
+# endsnippet
+
+# snippet template "template" b
+#
+# endsnippet
+
+# snippet slot "slot" b
+#
+# endsnippet
+
+# snippet canvas "canvas" b
+#
+# endsnippet

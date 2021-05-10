@@ -125,6 +125,8 @@ cask "keyboardcleantool"
 # WordPress local development tool by Flywheel
 cask "local"
 cask "mapture"
+# Team communication and collaboration software
+cask "slack"
 cask "townwifi"
 mas "Bitwarden", id: 1352778147
 mas "Magnet", id: 441258766

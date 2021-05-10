@@ -5,16 +5,16 @@ global !p
 from snippet_helpers import *
 endglobal
 
-snippet img "img tag" b
-<img class="$1" src="${2:$img}" alt="$3"${4: loading="lazy"}${0: <?php echo getimagesize($img)[3]; ?>}>
-endsnippet
+# ======================================================================
+# - UTILITIES
+# ======================================================================
 
-snippet php "php tag" i
+snippet php "PHP tag" i
 <?php $0 ?>
 endsnippet
 
 pre_expand "delete_all_right(snip, -1)"
-snippet "<?php " "expand php tag" r
+snippet "<?php " "Expand PHP tag" r
 
 $0
 ?>
@@ -22,5 +22,77 @@ endsnippet
 
 context "re.search('^ *<\?php', snip.buffer[snip.line - 1]) and re.search('^ *\?>', snip.buffer[snip.line + 1])"
 pre_expand "clear_line(snip, 1)"
-snippet "^" "unclosed php tag" rb
+snippet "^" "Unclosed PHP tag" rb
+endsnippet
+
+# ======================================================================
+# - WORDPRESS
+# ======================================================================
+
+snippet gh "get_header()" w
+get_header()
+endsnippet
+
+snippet gf "get_footer()" w
+get_footer()
+endsnippet
+
+snippet gtdu "get_template_directory_uri()" w
+get_template_directory()
+endsnippet
+
+snippet hp "have_posts()" w
+have_posts()
+endsnippet
+
+snippet tp "the_post()" w
+the_post()
+endsnippet
+
+snippet gtp "get_template_part()" w
+get_template_part('template-parts/$1'${2:, '$3'}${4:, [${5:$args}]})
+endsnippet
+
+snippet eu "esc_url()" w
+esc_url($1)
+endsnippet
+
+snippet hu "home_url()" w
+home_url('/$1')
+endsnippet
+
+# ======================================================================
+# - PHP
+# ======================================================================
+
+snippet if "if()" w
+if($1)
+endsnippet
+
+snippet elif "elseif()" w
+elseif($1)
+endsnippet
+
+snippet el "else" w
+else
+endsnippet
+
+snippet eif "endif" w
+endif
+endsnippet
+
+snippet w "while()" w
+while($1)
+endsnippet
+
+snippet ew "endwhile" w
+endwhile
+endsnippet
+
+snippet fe "foreach()" w
+foreach(${1:$items} as ${2:$item})
+endsnippet
+
+snippet efe "endforeach" w
+endforeach
 endsnippet

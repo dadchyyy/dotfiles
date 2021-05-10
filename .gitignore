@@ -4,4 +4,4 @@
 .tmux/themes
 .vim/autoload
 .vim/plugged
-.vim/ultisnips/sample*
+sample*

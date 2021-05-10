@@ -1,30 +1,17 @@
 priority 0
 
-snippet snip "ultisnips snippet" b
+global !p
+from snippet_helpers import *
+endglobal
+
+# ======================================================================
+# - ULTISNIPS
+# ======================================================================
+
+snippet snip "Ultisnips snippet definition" b
 `!p snip.rv = 'snippet'` ${1:Trigger} "${2:Description}" ${3:b}
 $0
 `!p snip.rv = 'endsnippet'`
-endsnippet
-
-snippet global "global script" b
-global
-from snippet_helpers import *
-$0
-endglobal
-endsnippet
-
-priority -1
-snippet p "inline script" i
-\`!p $1\`$0
-endsnippet
-priority 0
-
-snippet rv "snip.rv" w
-snip.rv = $0
-endsnippet
-
-snippet mg "match.group" w
-match.group(${1:1})$0
 endsnippet
 
 snippet "(\d)?vis" "${VISUAL}" rw
@@ -34,3 +21,28 @@ if match.group(1):
 else:
 		snip.rv = '${VISUAL}'`
 endsnippet
+
+snippet rv "snip.rv" w
+snip.rv = $0
+endsnippet
+
+snippet mg "match.group" w
+match.group(${1:1})$0
+endsnippet
+
+# ======================================================================
+# - PYTHON INTERPOLATION
+# ======================================================================
+
+snippet global "Global python script" b
+global !p
+from snippet_helpers import *
+$0
+endglobal
+endsnippet
+
+priority -1
+snippet p "Inline python script" i
+\`!p $1\`$0
+endsnippet
+priority 0

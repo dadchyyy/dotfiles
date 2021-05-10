@@ -9,6 +9,8 @@ set backspace=indent,eol,start
 set backupcopy=yes
 set wildcharm=<tab>
 set laststatus=2
+set hlsearch
+set incsearch
 
 if has('termguicolors')
   let &t_8f = "\<Esc>[38:2:%lu:%lu:%lum"
@@ -40,6 +42,7 @@ let g:mapleader = ' '
 nnoremap <leader>v :vs $MYVIMRC<cr>
 nnoremap <leader>V :so $MYVIMRC<cr>
 nnoremap q :q!<cr>
+nnoremap <leader>q q
 cnoremap <c-b> <left>
 cnoremap <c-n> <down>
 cnoremap <c-p> <up>
