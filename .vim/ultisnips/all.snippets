@@ -15,7 +15,7 @@ endglobal
 # - COMMENT GENERATORS
 # ======================================================================
 
-snippet h1 "H1 style comment" b
+snippet h1 "H1 comment" b
 `!p snip.rv = get_comment_format()[0]` `!p snip.rv = comment_border``!p snip.rv = "" if is_simple_comment_format() else " " + get_comment_format()[2]`
 `!p snip.rv = get_comment_format()[0]` - ${0:${VISUAL}}
 `!p snip.rv = get_comment_format()[0]` `!p snip.rv = comment_border``!p snip.rv = "" if is_simple_comment_format() else " " + get_comment_format()[2]`
