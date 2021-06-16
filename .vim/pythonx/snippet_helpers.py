@@ -64,7 +64,6 @@ def _parse_comments(s):
 def get_comment_format():
     """ Returns a 4-element tuple (first_line, middle_lines, end_line, indent)
     representing the comment format for the current file.
-
     It first looks at the 'commentstring', if that ends with %s, it uses that.
     Otherwise it parses '&comments' and prefers single character comment
     markers if there are any.

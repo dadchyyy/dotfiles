@@ -1,1 +1,0 @@
-inoremap <buffer> <c-l> $

@@ -4,22 +4,6 @@ global !p
 from snippet_helpers import *
 endglobal
 
-# ======================================================================
-# - COMMENT GENERATORS
-# ======================================================================
-
-snippet ; "Comment" bA
-<!-- $0 -->
-endsnippet
-
-snippet >; "End comment" iA
-><!-- $0 -->
-endsnippet
-
-# ======================================================================
-# - UTILITIES
-# ======================================================================
-
 pre_expand "delete_all_right(snip)"
 snippet "<([a-z1-6]+).*>" "Expand the tag" rb
 
@@ -27,20 +11,27 @@ snippet "<([a-z1-6]+).*>" "Expand the tag" rb
 </`!p snip.rv = match.group(1) `>
 endsnippet
 
-# ======================================================================
-# - HTML TAGS
-# ======================================================================
+snippet ! "skelton" b
+<!DOCTYPE html>
+<html${1: lang="ja"}>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="${2:Description}">
+	<link rel="stylesheet" href="${3:style}.css">
+	<script defer src="${4:script}.js"></script>
+	<title>${5:Title}</title>
+</head>
+<body>
+$0
+</body>
+</html>
+endsnippet
 
 snippet html "html" b
 <html${1: lang="${2:ja}"}>
 	${0:${VISUAL}}
 </html>
-endsnippet
-
-snippet head "head" b
-<head>
-	${0:${VISUAL}}
-</head>
 endsnippet
 
 snippet title "title" b
@@ -50,26 +41,6 @@ endsnippet
 # snippet base "<base>" b
 #
 # endsnippet
-
-snippet link "link" b
-<link rel="${1:stylesheet}" href="$0">
-endsnippet
-
-snippet meta "meta" b
-<meta$0>
-endsnippet
-
-snippet style "style" b
-<style>
-	${0:${VISUAL}}
-<style>
-endsnippet
-
-snippet body "body" b
-<body$1>
-	${0:${VISUAL}}
-</body>
-endsnippet
 
 snippet article "article" b
 <article class="$1">
@@ -201,9 +172,7 @@ snippet dd "dd" b
 endsnippet
 
 snippet figure "figure" b
-<figure class="$1">
-	${0:${VISUAL}}
-</figure>
+<figure class="$1">${0:${VISUAL}}</figure>
 endsnippet
 
 # snippet figcaption "figcaption" b
@@ -216,6 +185,11 @@ snippet main "main" b
 </main>
 endsnippet
 
+snippet div "div" b
+<div class="$1">${0:${VISUAL}}</div>
+endsnippet
+
+context "is_visual_line_mode(snip)"
 snippet div "div" b
 <div class="$1">
 	${0:${VISUAL}}

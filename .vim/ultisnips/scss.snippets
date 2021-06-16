@@ -1,34 +1,10 @@
 extends css
-priority 50
+priority 10
 
-global !p
-from snippet_helpers import *
-module_dir = 'abstracts'
-endglobal
-
-# ======================================================================
-# - DART SASS
-# ======================================================================
-
-snippet use "Use modules" b
-@use ${0:'../`!p snip.rv = module_dir`/$1'};
+snippet #{ "escaping" iA
+#{${1:${VISUAL}}}
 endsnippet
 
-# ======================================================================
-# - PSEUDO
-# ======================================================================
-
-snippet fh "focus, hover" b
-&:focus,
-&:hover
+snippet inc "inc" b
+@include
 endsnippet
-
-snippet focus "focus" b
-&:focus
-endsnippet
-
-snippet hover "hover" b
-&:hover
-endsnippet
-
-

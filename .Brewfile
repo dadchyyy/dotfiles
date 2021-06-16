@@ -1,5 +1,6 @@
 tap "b4b4r07/tap"
 tap "candid82/brew"
+tap "delphinus/sfmono-square"
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
@@ -18,8 +19,14 @@ brew "asdf"
 brew "bat"
 # Parser generator
 brew "bison"
+# Software library to render fonts
+brew "freetype"
 # GNU internationalization (i18n) and localization (l10n) library
 brew "gettext"
+# Manage compile and link flags for libraries
+brew "pkg-config"
+# Get, unpack, build, and install modules from CPAN
+brew "cpanminus"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Modern replacement for 'ls'
@@ -28,8 +35,8 @@ brew "exa"
 brew "fd"
 # Collection of GNU find, xargs, and locate
 brew "findutils"
-# Software library to render fonts
-brew "freetype"
+# C/C++ and Java libraries for Unicode and globalization
+brew "icu4c"
 # Command-line fuzzy finder written in Go
 brew "fzf"
 # GNU multiple precision arithmetic library
@@ -46,12 +53,10 @@ brew "gibo"
 brew "git"
 # Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Manage compile and link flags for libraries
-brew "pkg-config"
+# GNU version of the tar archiving utility
+brew "gnu-tar"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
-# C/C++ and Java libraries for Unicode and globalization
-brew "icu4c"
 # Tools and libraries to manipulate images in many formats
 brew "imagemagick"
 # Network authentication protocol
@@ -68,8 +73,12 @@ brew "libsodium"
 brew "libxml2"
 # C library for reading, creating, and modifying zip archives
 brew "libzip"
+# Just-In-Time Compiler (JIT) for the Lua programming language
+brew "luajit", args: ["HEAD"]
 # Mac App Store command-line interface
 brew "mas"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim", args: ["HEAD"]
 # Regular expressions library
 brew "oniguruma"
 # Tool to automatically fix PHP coding standards issues
@@ -92,6 +101,8 @@ brew "tig"
 brew "tmux"
 # Vi 'workalike' with many additional features
 brew "vim"
+# Command-line interface for WordPress
+brew "wp-cli"
 # General-purpose lossless data-compression library
 brew "zlib"
 # UNIX shell (command interpreter)
@@ -104,31 +115,39 @@ brew "zsh-history-substring-search"
 brew "zsh-syntax-highlighting"
 # Replacement for UNIX rm command!
 brew "b4b4r07/tap/gomi"
+# Square-sized SF Mono + Japanese fonts + nerd-fonts
+brew "delphinus/sfmono-square/sfmono-square"
 # karabiner configurator
 brew "yqrashawn/goku/goku"
+# Collection of apps and services for photography, design, video, web, and UX
+cask "adobe-creative-cloud"
 # GPU-accelerated terminal emulator
 cask "alacritty"
-# Application launcher and productivity software
-cask "alfred"
+cask "aquaskk"
 # Trains AIs to understand and translate texts
 cask "deepl"
+# Client for the Dropbox cloud storage service
+cask "dropbox"
 # Web browser
 cask "firefox"
 cask "font-daddy-time-mono-nerd-font"
-cask "google-backup-and-sync"
+# Floating screenshot like a sticky
+cask "fuwari"
 # Web browser
 cask "google-chrome"
+cask "google-japanese-ime"
+cask "gyazo"
 # Keyboard customizer
 cask "karabiner-elements"
 # Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
 # WordPress local development tool by Flywheel
 cask "local"
-cask "mapture"
+# Screen capture tool with mark up and sharing features
+cask "skitch"
 # Team communication and collaboration software
 cask "slack"
-cask "townwifi"
-mas "Bitwarden", id: 1352778147
+# Video communication and virtual meeting platform
+cask "zoom"
 mas "Magnet", id: 441258766
 mas "Spark", id: 1176895641
-mas "The Unarchiver", id: 425424353

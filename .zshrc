@@ -13,17 +13,19 @@ export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
 
 # $ENV.
+export LANG=C
 export EDITOR="vim"
 export PAGER="less"
+export DF="$HOME/dotfiles"
+export WS="$HOME/workspace"
 export BOX="$HOME/GoogleDrive"
-export DF="$BOX/dotfiles"
-export WS="$BOX/workspace"
 
 # PROMPT.
 export PROMPT='
-%F{yellow}%1/%f %F{green}●%f%F{yellow}●%f%F{red}●%f (%U%/%u)
+%F{yellow}%1/%f %F{green}● %f%F{yellow}● %f%F{red}● %f (%U%/%u)
 → '
 
 # Zsh completion settings.
@@ -36,16 +38,16 @@ setopt hist_ignore_space
 setopt hist_reduce_blanks
 setopt hist_save_no_dups
 setopt hist_no_store
-# zle -N history-beginning-search-backward-end history-search-end
-# zle -N history-beginning-search-forward-end history-search-end
-# bindkey "^p" history-beginning-search-backward-end
-# bindkey "^b" history-beginning-search-forward-end
 
 # Emacs-like key bindings.
 bindkey -e
 
 # Relaunch current shell.
 alias reload="exec $SHELL -l"
+
+# EDITOR alias.
+alias vi="$EDITOR"
+alias vim="$EDITOR"
 
 # Global aliases.
 alias -g G="| grep"
@@ -140,8 +142,8 @@ export PYTHONDONTWRITEBYTECODE=1
 
 # fzf.
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-# export FZF_DEFAULT_COMMAND='fd --type f'
-# export FZF_CTRL_T_COMMAND='fd --type f --hidden . ~'
+export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_CTRL_T_COMMAND='fd --type f --hidden . ~'
 export FZF_CD_COMMAND='fd --type d --hidden . ~'
 
 # asdf-vm.
