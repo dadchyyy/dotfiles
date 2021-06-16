@@ -21,7 +21,7 @@ export EDITOR="vim"
 export PAGER="less"
 export DF="$HOME/dotfiles"
 export WS="$HOME/workspace"
-export BOX="$HOME/GoogleDrive"
+export BOX="$HOME/Dropbox"
 
 # PROMPT.
 export PROMPT='
