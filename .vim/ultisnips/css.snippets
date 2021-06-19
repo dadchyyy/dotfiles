@@ -25,6 +25,14 @@ else:
 `$0/* debug */ border: 1px solid rgba(`!p snip.rv = rgb`, 0.4); background-color: rgba(`!p snip.rv = rgb`, 0.2);
 endsnippet
 
+snippet "([+-]?\d+(?:\.\d+)?(?:[eE][+-]?\d+)?)p" "easy % insertion" rwA
+`!p snip.rv = match.group(1)`%
+endsnippet
+
+snippet %x "ease % insertion - px fallback" iA
+px
+endsnippet
+
 snippet font-smoothing "font-smoothing" b
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;

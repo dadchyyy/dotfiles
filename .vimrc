@@ -156,3 +156,10 @@ xmap gj <Plug>(columnskip:nonblank:next)
 nmap gk <Plug>(columnskip:nonblank:prev)
 omap gk <Plug>(columnskip:nonblank:prev)
 xmap gk <Plug>(columnskip:nonblank:prev)
+
+" emmet-vim
+let g:user_emmet_install_global = 0
+augroup vimrc_pi_emmet
+  autocmd!
+  autocmd FileType html EmmetInstall
+augroup END
