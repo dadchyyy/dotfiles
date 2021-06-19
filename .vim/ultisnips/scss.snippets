@@ -5,6 +5,14 @@ snippet #{ "escaping" iA
 #{${1:${VISUAL}}}
 endsnippet
 
-snippet inc "inc" b
-@include
+snippet uses "@use set" b
+@use "../00-modules/color";
+@use "../00-modules/media-query" as mq;
+
+endsnippet
+
+snippet mq "respond-to()" b
+@include mq.respond-to("${1:sm}") {
+	${0:${VISUAL}}
+}
 endsnippet

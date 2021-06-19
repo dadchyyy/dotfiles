@@ -1,0 +1,13 @@
+priority 0
+
+global !p
+from snippet_helpers import *
+comment_border_length = 70
+endglobal
+
+snippet s; "heading comment" bA
+`!p snip.rv = get_comment_format()[0]` `!p snip.rv = "=" * comment_border_length`
+`!p snip.rv = get_comment_format()[0]` - ${1:${VISUAL}}
+`!p snip.rv = get_comment_format()[0]` `!p snip.rv = "=" * comment_border_length`
+
+endsnippet

@@ -23,6 +23,14 @@ def clear_line(snip, relative_line=0):
     snip.cursor.set(snip.line, -1)
 
 
+def escape():
+    vim.eval('feedkeys("\<ESC>")')
+
+
+def escape_hat_pos():
+    vim.eval('feedkeys("\<ESC>^")')
+
+
 def _parse_comments(s):
     """ Parses vim's comments option to extract comment format """
     i = iter(s.split(","))

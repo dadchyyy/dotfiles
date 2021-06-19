@@ -145,7 +145,7 @@
         "manipulators" : [ {
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "j"
+              "key_code" : "semicolon"
             }, {
               "key_code" : "a"
             } ],
@@ -165,7 +165,7 @@
         }, {
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "j"
+              "key_code" : "semicolon"
             }, {
               "key_code" : "c"
             } ],
@@ -185,7 +185,7 @@
         }, {
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "j"
+              "key_code" : "semicolon"
             }, {
               "key_code" : "d"
             } ],
@@ -205,7 +205,7 @@
         }, {
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "j"
+              "key_code" : "semicolon"
             }, {
               "key_code" : "f"
             } ],
@@ -225,7 +225,7 @@
         }, {
           "from" : {
             "simultaneous" : [ {
-              "key_code" : "j"
+              "key_code" : "semicolon"
             }, {
               "key_code" : "x"
             } ],
@@ -240,25 +240,6 @@
             "key_code" : "japanese_eisuu"
           }, {
             "shell_command" : "open \"/Applications/Adobe XD/Adobe XD.app\""
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "simultaneous" : [ {
-              "key_code" : "j"
-            }, {
-              "key_code" : "v"
-            } ],
-            "simultaneous_options" : {
-              "detect_key_down_uninterruptedly" : false,
-              "key_down_order" : "insensitive",
-              "key_up_order" : "insensitive",
-              "key_up_when" : "any"
-            }
-          },
-          "to" : [ {
-            "key_code" : "v",
-            "modifiers" : [ "left_command", "left_control", "left_option", "left_shift" ]
           } ],
           "type" : "basic"
         } ]
@@ -726,10 +707,6 @@
           },
           "to" : [ {
             "key_code" : "tab"
-          } ],
-          "conditions" : [ {
-            "type" : "frontmost_application_unless",
-            "bundle_identifiers" : [ "^io\\.alacritty$", "^com\\.apple\\.Terminal$" ]
           } ],
           "type" : "basic"
         } ]

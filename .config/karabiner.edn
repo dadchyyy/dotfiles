@@ -27,12 +27,12 @@
            [:!Cl [:japanese_eisuu :!Cl]]
            ]}
   {:des "launch apps"
-   :rules [[[:j :a] [:japanese_eisuu [:open "/Applications/Alacritty.app"]]]
-           [[:j :c] [:japanese_eisuu [:open "/Applications/Google Chrome.app"]]]
-           [[:j :d] [:japanese_eisuu [:open "/Applications/DeepL.app"]]]
-           [[:j :f] [:japanese_eisuu [:open "/System/Library/CoreServices/Finder.app"]]]
-           [[:j :x] [:japanese_eisuu [:open "/Applications/Adobe XD/Adobe XD.app"]]]
-           [[:j :v] :!!v]
+   :rules [
+           [[:semicolon :a] [:japanese_eisuu [:open "/Applications/Alacritty.app"]]]
+           [[:semicolon :c] [:japanese_eisuu [:open "/Applications/Google Chrome.app"]]]
+           [[:semicolon :d] [:japanese_eisuu [:open "/Applications/DeepL.app"]]]
+           [[:semicolon :f] [:japanese_eisuu [:open "/System/Library/CoreServices/Finder.app"]]]
+           [[:semicolon :x] [:japanese_eisuu [:open "/Applications/Adobe XD/Adobe XD.app"]]]
            ]}
   {:des "alfred"
    :rules [:!in_alfred
@@ -72,7 +72,7 @@
   {:des "ctrl-m to enter"
    :rules [:!terminals [:!Tm :return_or_enter]]}
   {:des "ctrl-i to tab"
-   :rules [:!terminals [:!Ti :tab]]}
+   :rules [[:!Ti :tab]]}
   {:des "ctrl-h to backspace"
    :rules [:!terminals [:!Th :delete_or_backspace]]}
   {:des "ctrl-[ to escape"

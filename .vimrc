@@ -1,7 +1,6 @@
 let g:mapleader = ' '
 
 set encoding=utf-8
-set fileencodings=utf-8,euc-jp
 set ttimeoutlen=0
 set expandtab
 set tabstop=2
@@ -18,6 +17,7 @@ set backspace=eol,indent,start
 set nrformats=unsigned
 set ignorecase
 set ambiwidth=double
+set pumheight=10
 
 if has('termguicolors')
   set termguicolors
@@ -46,8 +46,15 @@ augroup END
 nnoremap <silent> <leader>v :vs $MYVIMRC<cr>
 nnoremap <silent> <leader>. :so $MYVIMRC<cr>
 nnoremap <silent> q :q!<cr>
+nnoremap <silent> <leader>q q
+nnoremap <silent> Q q
 nnoremap <silent> <leader>- :e %:h<cr>
 nnoremap <silent> <c-l> :noh<cr>
+cnoremap <c-b> <left>
+cnoremap <c-n> <down>
+cnoremap <c-p> <up>
+cnoremap <c-f> <right>
+cnoremap <c-a> <home>
 
 augroup vimrc_ft_scss
   autocmd!
@@ -66,6 +73,8 @@ Plug 'junegunn/fzf.vim' | Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'SirVer/ultisnips'
 Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tyru/columnskip.vim'
+Plug 'wellle/targets.vim'
+Plug 'mattn/emmet-vim'
 call plug#end()
 
 " vim-plug
@@ -121,7 +130,7 @@ let g:UltiSnipsSnippetAuthor = 'dadchyyy'
 nnoremap <leader>u :UltiSnipsEdit<cr>
 nnoremap <leader>U :UltiSnipsEdit<space>
 nnoremap <leader>t :call <sid>ultisnips_edit_temporary_snippet()<cr>
-inoremap <c-f> <c-r>=UltiSnipsTemporarySnippet<cr>
+inoremap <c-t> <c-r>=UltiSnipsTemporarySnippet<cr>
 function! s:ultisnips_edit_temporary_snippet() abort
   let l:snippet = input('Temporary Snippet: ')
   if empty(l:snippet)
@@ -131,7 +140,6 @@ function! s:ultisnips_edit_temporary_snippet() abort
 endfunction
 
 " vim-hexokinase
-" let g:Hexokinase_highlighters = ['foreground']
 let g:Hexokinase_optInPatterns = [
 \     'full_hex',
 \     'triple_hex',

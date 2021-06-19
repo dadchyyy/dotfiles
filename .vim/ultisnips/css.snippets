@@ -4,12 +4,13 @@ global !p
 from snippet_helpers import *
 endglobal
 
-snippet " ?{" "expand the tag" riA
+snippet " ?{" "expand css blcok" riA
  {
 	${0:${VISUAL}}
 }
 endsnippet
 
+post_jump "escape_hat_pos()"
 snippet ",([a-z])" "debug code" rbA
 `!p
 query = match.group(1)
@@ -27,4 +28,140 @@ endsnippet
 snippet font-smoothing "font-smoothing" b
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
+endsnippet
+
+# ======================================================================
+# - CSS Properties & Values: https://github.com/constverum/stylelint-config-rational-order/tree/master/groups
+# ======================================================================
+
+snippet "po?si?" "position" rb
+position: $0
+endsnippet
+
+snippet psr "position: relative;" b
+position: relative;
+
+endsnippet
+
+snippet psa "position: absolute;" b
+position: absolute;
+
+endsnippet
+
+snippet psf "position: fixed;" b
+position: fixed;
+
+endsnippet
+
+snippet pss "position: sticky;" b
+position: sticky;
+
+endsnippet
+
+snippet "t(op|o|p)?" "top" rb
+top: $0
+endsnippet
+
+snippet "ri?" "right" rb
+right: $0
+endsnippet
+
+snippet "b(ot|o|t)?" "bottom" rb
+bottom: $0
+endsnippet
+
+snippet "l(ef|f|e)?" "left" rb
+left: $0
+endsnippet
+
+snippet "z(ind|in|i)?" "z-index" rb
+z-index: $0
+endsnippet
+
+snippet "d(is|ip|i)?" "display" rb
+display: $0
+endsnippet
+
+snippet "di?b" "display: block;" rb
+display: block;
+
+endsnippet
+
+snippet "di?ib" "display: inline-block;" rb
+display: inline-block;
+
+endsnippet
+
+snippet "di?f" "display: flex;" rb
+diplay: flex;
+
+endsnippet
+
+snippet "di?g" "display: grid;" rb
+display: grid;
+
+endsnippet
+
+snippet "wi?" "width" rb
+width: $0
+endsnippet
+
+snippet maw "max-width" b
+max-width: $0
+endsnippet
+
+snippet miw "min-width" b
+min-width: $0
+endsnippet
+
+snippet "h(ei|e|i)?" "height" rb
+height: $0
+endsnippet
+
+snippet mah "mex-height" b
+max-height: $0
+endsnippet
+
+snippet mih "min-height" b
+min-height: $0
+endsnippet
+
+snippet "m(arg|ar|g)?" "margin" rb
+margin: $0
+endsnippet
+
+snippet mt "margin-top" b
+margin-top: $0
+endsnippet
+
+snippet mr "margin-right" b
+margin-right: $0
+endsnippet
+
+snippet mb "margin-bottom" b
+margin-bottom: $0
+endsnippet
+
+snippet ml "margin-left" b
+margin-left: $0
+endsnippet
+
+snippet "p(ad|a|d)?" "padding" rb
+padding: $0
+endsnippet
+
+snippet pt "padding-top" b
+padding-top: $0
+endsnippet
+
+snippet pr "padding-right" b
+padding-right: $0
+endsnippet
+
+snippet pb "padding-bottom" b
+padding-bottom: $0
+endsnippet
+
+snippet pl "padding-left" b
+padding-left: $0
 endsnippet

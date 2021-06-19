@@ -17,13 +17,22 @@ snippet ! "skelton" b
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta name="description" content="${2:Description}">
-	<link rel="stylesheet" href="${3:style}.css">
-	<script defer src="${4:script}.js"></script>
-	<title>${5:Title}</title>
+	<meta name="description" content="${2:Description}">${3:
+	<meta name="robots" content="noindex nofollow">}
+	<link rel="stylesheet" href="${4:style}.css">
+	<script defer src="$4.js"></script>
+	<title>${6:`basename \`pwd\``}</title>
 </head>
 <body>
-$0
+<header class="header">
+</header>
+
+<main class="main">
+	${0:<h1>Hello, $6!</h1>}
+</main>
+
+<footer class="footer">
+</footer>
 </body>
 </html>
 endsnippet

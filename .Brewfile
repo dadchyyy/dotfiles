@@ -123,6 +123,8 @@ brew "yqrashawn/goku/goku"
 cask "adobe-creative-cloud"
 # GPU-accelerated terminal emulator
 cask "alacritty"
+# Application launcher and productivity software
+cask "alfred"
 cask "aquaskk"
 # Trains AIs to understand and translate texts
 cask "deepl"
