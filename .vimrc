@@ -18,7 +18,7 @@ set backspace=eol,indent,start
 set nrformats=unsigned
 set ignorecase
 set ambiwidth=double
-set pumheight=10
+set pumheight=7
 set backupcopy=yes
 
 if has('termguicolors')
