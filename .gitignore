@@ -2,6 +2,5 @@
 .config/gh/state.yml
 .config/karabiner/automatic_backups
 .tmux/themes
-.vim/autoload
 .vim/plugged
 sample*
