@@ -93,7 +93,7 @@ let g:auto_save_silent = 1
 " material.vim
 let g:material_terminal_italics = 0
 let g:material_theme_style = 'palenight'
-colorscheme material
+silent! colorscheme material
 
 " vim-molder / vim-molder-operations
 let g:molder_show_hidden = 1
