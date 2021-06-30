@@ -1,18 +1,31 @@
 extends css
 priority 10
 
+global !p
+from snippet_helpers import *
+
+module_name_media_query = "mq";
+endglobal
+
 snippet #{ "escaping" iA
 #{${1:${VISUAL}}}
 endsnippet
 
-snippet uses "@use set" b
-@use "../00-modules/color";
-@use "../00-modules/media-query" as mq;
-
+context "snip.buffer[snip.line].startswith('///')"
+snippet { "escaping" iA
+{${1:${VISUAL}}}
 endsnippet
 
-snippet mq "respond-to()" b
-@include mq.respond-to("${1:sm}") {
+snippet use "@use set" b
+@use "sass:math";
+@use "../00-modules/color";
+@use "../00-modules/text";
+@use "../00-modules/size";
+@use "../00-modules/media-query" as `!p snip.rv = module_name_media_query`;
+endsnippet
+
+snippet rt "respond-to()" b
+@include `!p snip.rv = module_name_media_query`.respond-to("${1:sm}") {
 	${0:${VISUAL}}
 }
 endsnippet

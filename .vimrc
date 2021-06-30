@@ -1,6 +1,7 @@
 let g:mapleader = ' '
 
 set encoding=utf-8
+set fileencodings=utf-8,euc-jp
 set ttimeoutlen=0
 set expandtab
 set tabstop=2
@@ -18,6 +19,7 @@ set nrformats=unsigned
 set ignorecase
 set ambiwidth=double
 set pumheight=10
+set backupcopy=yes
 
 if has('termguicolors')
   set termguicolors
@@ -59,6 +61,7 @@ cnoremap <c-a> <home>
 augroup vimrc_ft_scss
   autocmd!
   autocmd FileType scss inoremap <buffer> <c-l> $
+  autocmd FileType scss set iskeyword+=-,$
 augroup END
 
 call plug#begin('~/.vim/plugged')
@@ -75,6 +78,8 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'tyru/columnskip.vim'
 Plug 'wellle/targets.vim'
 Plug 'mattn/emmet-vim'
+Plug 'thinca/vim-nind'
+Plug 'digitaltoad/vim-pug'
 call plug#end()
 
 " vim-plug
@@ -99,7 +104,7 @@ augroup vimrc_pi_molder
 augroup END
 augroup vimrc_pi_molder_operations
   autocmd!
-  autocmd FileType molder nmap <buffer> d <plug>(molder-operations-newdir)
+  autocmd FileType molder nmap <buffer><nowait>  d <plug>(molder-operations-newdir)
   autocmd FileType molder nmap <buffer> % <plug>(molder-operations-newfile)
   autocmd FileType molder nmap <buffer> D <plug>(molder-operations-delete)
   autocmd FileType molder nmap <buffer> R <plug>(molder-operations-rename)

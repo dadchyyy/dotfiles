@@ -104,21 +104,21 @@ window:
 # Font configuration
 font:
   normal:
-    family: Source Han Mono
-    style: Regular
+    family: DaddyTimeMono Nerd Font Mono
+    style: Book
   bold:
-    family: Source Han Mono
-    style: Regular
+    family: DaddyTimeMono Nerd Font Mono
+    style: Book
   italic:
-    family: Source Han Mono
-    style: Italic
+    family: DaddyTimeMono Nerd Font Mono
+    style: Book
   bold_italic:
-    family: Source Han Mono
-    style: Italic
-  size: 11.0
+    family: DaddyTimeMono Nerd Font Mono
+    style: Book
+  size: 14.0
   offset:
     x: 0
-    y: 1
+    y: 0
   glyph_offset:
     x: 0
     y: 0

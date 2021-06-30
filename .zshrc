@@ -25,7 +25,7 @@ export BOX="$HOME/Dropbox"
 
 # PROMPT.
 export PROMPT='
-%F{yellow}%1/%f %F{green}● %f%F{yellow}● %f%F{red}● %f (%U%/%u)
+%F{yellow}%1/%f %F{green}●%f%F{yellow}●%f%F{red}●%f (%U%/%u)
 → '
 
 # Zsh completion settings.

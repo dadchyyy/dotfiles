@@ -227,6 +227,46 @@
             "simultaneous" : [ {
               "key_code" : "semicolon"
             }, {
+              "key_code" : "m"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "japanese_eisuu"
+          }, {
+            "shell_command" : "open \"/Applications/Spark.app\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "semicolon"
+            }, {
+              "key_code" : "s"
+            } ],
+            "simultaneous_options" : {
+              "detect_key_down_uninterruptedly" : false,
+              "key_down_order" : "insensitive",
+              "key_up_order" : "insensitive",
+              "key_up_when" : "any"
+            }
+          },
+          "to" : [ {
+            "key_code" : "japanese_eisuu"
+          }, {
+            "shell_command" : "open \"/Applications/Slack.app\""
+          } ],
+          "type" : "basic"
+        }, {
+          "from" : {
+            "simultaneous" : [ {
+              "key_code" : "semicolon"
+            }, {
               "key_code" : "x"
             } ],
             "simultaneous_options" : {
@@ -619,31 +659,6 @@
               "product_id" : 634
             } ],
             "type" : "device_if"
-          } ],
-          "type" : "basic"
-        } ]
-      }, {
-        "description" : "initialize select input source keys",
-        "manipulators" : [ {
-          "from" : {
-            "key_code" : "j",
-            "modifiers" : {
-              "mandatory" : [ "left_control", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "japanese_kana"
-          } ],
-          "type" : "basic"
-        }, {
-          "from" : {
-            "key_code" : "semicolon",
-            "modifiers" : {
-              "mandatory" : [ "left_control", "left_shift" ]
-            }
-          },
-          "to" : [ {
-            "key_code" : "japanese_eisuu"
           } ],
           "type" : "basic"
         } ]

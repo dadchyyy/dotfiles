@@ -32,6 +32,8 @@
            [[:semicolon :c] [:japanese_eisuu [:open "/Applications/Google Chrome.app"]]]
            [[:semicolon :d] [:japanese_eisuu [:open "/Applications/DeepL.app"]]]
            [[:semicolon :f] [:japanese_eisuu [:open "/System/Library/CoreServices/Finder.app"]]]
+           [[:semicolon :m] [:japanese_eisuu [:open "/Applications/Spark.app"]]]
+           [[:semicolon :s] [:japanese_eisuu [:open "/Applications/Slack.app"]]]
            [[:semicolon :x] [:japanese_eisuu [:open "/Applications/Adobe XD/Adobe XD.app"]]]
            ]}
   {:des "alfred"
@@ -62,9 +64,9 @@
            [:##fn :left_option]
            [:##right_shift :left_shift]
            [:##international1 :left_shift]]}
-  {:des "initialize select input source keys"
-   :rules [[:!TSj :japanese_kana]
-           [:!TSsemicolon :japanese_eisuu]]}
+  ;; {:des "initialize select input source keys"
+  ;;  :rules [[:!TSj :japanese_kana]
+  ;;          [:!TSsemicolon :japanese_eisuu]]}
   {:des "caps_lock to ctrl"
    :rules [[:##caps_lock :left_control]]}
   {:des "enter to ctrl"

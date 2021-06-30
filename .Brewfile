@@ -145,6 +145,8 @@ cask "karabiner-elements"
 cask "keyboardcleantool"
 # WordPress local development tool by Flywheel
 cask "local"
+# Web development solution with Apache, Nginx, PHP & MySQL
+cask "mamp"
 # Screen capture tool with mark up and sharing features
 cask "skitch"
 # Team communication and collaboration software
